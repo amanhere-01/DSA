@@ -14,13 +14,13 @@ public class SearchInRange {
         System.out.println(search(arr,start,end,target2));
     }
 
-    static boolean search(int[] a , int start, int end, int target ){
-        if(a.length==0|| end>a.length || start<0){
+    static boolean search(int[] arr , int start, int end, int target ){
+        if(arr.length==0|| end>arr.length || start<0){
             return false;
         }
 
         for (int index= start; index<=end ; index++){
-            if (a[index]== target){
+            if (arr[index]== target){
                 return true;
             }
         }
