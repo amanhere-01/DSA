@@ -7,7 +7,7 @@ public class SearchInRange {
         int[] arr= {12,23,34,45,56,67,78,79,-1,-54};
         int start= 2;
         int end= 7;
-        int target1= 56;
+        int target1= 79;
         int target2 = 23;
 
         System.out.println(search(arr,start,end,target1));
@@ -19,7 +19,7 @@ public class SearchInRange {
             return false;
         }
 
-        for (int index= start; index<end ; index++){
+        for (int index= start; index<=end ; index++){
             if (a[index]== target){
                 return true;
             }
