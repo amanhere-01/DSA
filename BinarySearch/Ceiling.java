@@ -9,7 +9,7 @@ public class Ceiling {
     public static void main(String[] args) {
         int[] nums = {2,3,5,9,14,16,18};
         int target= 15;
-        System.out.println(ceiling(nums,target));   
+        System.out.println(ceiling(nums,target));
 
     }
 
