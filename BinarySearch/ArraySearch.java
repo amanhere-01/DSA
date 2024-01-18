@@ -14,7 +14,7 @@ public class ArraySearch {
         int end= arr.length-1;
 
         while(start<=end){
-            int mid= start + (end-start)/2;
+            int mid= start + (end-start)/2;     // it is used in this way for integer bounds
 
             if(target<arr[mid]){
                 end= mid-1;

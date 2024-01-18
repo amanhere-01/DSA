@@ -1,10 +1,14 @@
-package BinarySearch;
+//  Order agnostic means the array will be sorted inceasing or decreasing
 
+
+package BinarySearch;
 public class OrderAgnosticBS {
     public static void main(String[] args) {
         int[] nums = {-18,-12,-6,-2,0,3,5,9,12,21,43,65};
+        int[] nums1 = {65,54,43,32,21,0,-1,-12,-34,-54};
         int target = 5;
         System.out.println(OAsearch(nums , target));
+        System.out.println(OAsearch(nums1 , target));
     }
 
     static int OAsearch(int arr[] , int target){
