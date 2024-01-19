@@ -8,7 +8,7 @@ public class ArraySearch {
     }
 
 
-    // It will return -1 if element si not in the array
+    // It will return -1 if element is not in the array
     static int search(int arr[] , int target){
         int start=0;
         int end= arr.length-1;
