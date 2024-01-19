@@ -6,7 +6,9 @@ package BinarySearch;
 public class PivotElement {
     public static void main(String[] args) {
         int []nums = {3,4,5,6,7,8,0,1,2};   // here array with increasing order gives error ex-{1,2,3} gives error likewise decreasing order
+        int []nums1 = {3};                  // but for one element it will work
         System.out.println(search(nums));
+        System.out.println(search(nums1));
     }
 
     static int search(int[] nums) {
@@ -17,15 +19,18 @@ public class PivotElement {
         while(start<=end){
             int mid= start+ (end-start)/2;
 
-            if(nums[mid]>nums[mid+1] ){
+            if(mid<end && nums[mid]>nums[mid+1] ){
                 return index=mid;
-            } else if(nums[mid]<nums[mid-1]){
+            } else if(mid>start && nums[mid]<nums[mid-1]){
                 return index= mid-1;
             }
-            else if(nums[mid]<nums[mid+1]){
+            else if(mid<end && nums[mid]<nums[mid+1]){
                 start=mid+1;
             }
+            if (mid==end || mid== start){
+                break;
+            }
         }
-        return index;
+        return 1;
     }
 }
