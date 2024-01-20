@@ -2,6 +2,10 @@
 // we use cyclic sort for finding missing number or finding smallest positive missing number
 // If range is [0,N] then every element will be at index= value
 //  If range is [1,N] then every element will be at index = value -1
+
+// Problem 448,268,287,442,645,41 on leetcode
+
+
 package Sorting.CyclicSorting;
 
 import java.util.Arrays;
@@ -19,7 +23,7 @@ public class CyclicSort {
             int correct=  arr[i]-1;
             if(arr[i]!=arr[correct]){
 //          basically we are picking element and checking if that element is present at its correct index or not.
-//          IN this ex we pick 2 and 2 should be at index 1 so we swap it by the elment at index 1                
+//          IN this ex we pick 2 and 2 should be at index 1 so we swap it by the elment at index 1
                 swap(arr,i,correct);
             }
             else {
