@@ -18,6 +18,8 @@ public class CyclicSort {
         while(i< arr.length){
             int correct=  arr[i]-1;
             if(arr[i]!=arr[correct]){
+//          basically we are picking element and checking if that element is present at its correct index or not.
+//          IN this ex we pick 2 and 2 should be at index 1 so we swap it by the elment at index 1                
                 swap(arr,i,correct);
             }
             else {
