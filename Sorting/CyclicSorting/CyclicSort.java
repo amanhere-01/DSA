@@ -2,7 +2,7 @@
 // we use cyclic sort for finding missing number or finding smallest positive missing number
 // If range is [0,N] then every element will be at index= value
 //  If range is [1,N] then every element will be at index = value -1
-package Sorting;
+package Sorting.CyclicSorting;
 
 import java.util.Arrays;
 

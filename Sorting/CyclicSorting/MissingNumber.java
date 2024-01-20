@@ -1,7 +1,7 @@
 // Q) https://leetcode.com/problems/missing-number/
 // in ques it is mentioned array [0,n] so we will be using quick sort
 
-package Sorting;
+package Sorting.CyclicSorting;
 
 import java.util.Arrays;
 
@@ -18,8 +18,9 @@ public class MissingNumber {
         int i=0;
         // first we sort the element
         while (i<nums.length){
-            if(nums[i]< nums.length && nums[i] != i){
-                swap(nums,i,nums[i]);
+            int correct = nums[i];
+            if(nums[i]< nums.length && nums[i] != nums[correct]){
+                swap(nums,i,correct);
             }
             else {
                 i++;
