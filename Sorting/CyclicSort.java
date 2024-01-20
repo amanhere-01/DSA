@@ -1,13 +1,14 @@
 //  whenever there is array of 1 to N number then think of cyclic sort
 // we use cyclic sort for finding missing number or finding smallest positive missing number
-
+// If range is [0,N] then every element will be at index= value
+//  If range is [1,N] then every element will be at index = value -1
 package Sorting;
 
 import java.util.Arrays;
 
 public class CyclicSort {
     public static void main(String[] args) {
-        int[] nums = {5,4,3,2,1};
+        int[] nums = {2,4,1,5,3};
         sort(nums);
         System.out.println(Arrays.toString(nums));
     }
@@ -15,10 +16,13 @@ public class CyclicSort {
     static void sort(int[] arr){
         int i=0;
         while(i< arr.length){
-            while(arr[i]!=i+1){
-                swap(arr,i,arr[i]-1);
+            int correct=  arr[i]-1;
+            if(arr[i]!=arr[correct]){
+                swap(arr,i,correct);
             }
-            i++;
+            else {
+                i++;
+            }
         }
     }
     static void swap(int[] arr, int first , int second){
