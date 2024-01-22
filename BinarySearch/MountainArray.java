@@ -24,7 +24,8 @@ public class MountainArray {
                 // this may be the ans, but look at left
                 // this is why end != mid - 1
                 end = mid;
-            } else if (arr[mid] > arr[mid-1])  {
+            } else{
+//            else if (arr[mid] > arr[mid-1])  {    // we can use this too instead of else
                 // you are in asc part of array
                 start = mid + 1; // because we know that mid+1 element > mid element
             }

@@ -1,5 +1,5 @@
 //  Q)  https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
-
+// infinite array means we don't know the length of array
 // this will be working for element till 90 after that it would throw indexOutOfBond exception
 
 package BinarySearch;
@@ -12,7 +12,7 @@ public class InfiniteArray {
     }
 
     static int search(int[] arr , int target){
-        // first we start from box of 2 element(box size=1) i.e start=0 and end=1 and gradually we increase the box size by 2*n(we are doing opposite of what we did in binary search, we are gradually decreasing the box range by n/2)
+        // first we start from box of 2 element(box size=1) i.e start=0 and end=1 and gradually we increase the box size by 2*n[we are doing opposite of what we did in binary search, we were gradually decreasing the box range by n/2]
         int start=0;
         int end=1;
 
