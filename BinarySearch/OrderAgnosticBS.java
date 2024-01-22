@@ -1,4 +1,4 @@
-//  Order agnostic means the array will be sorted inceasing or decreasing
+//  Order agnostic means the array will be sorted increasing or decreasing
 
 
 package BinarySearch;
@@ -8,7 +8,7 @@ public class OrderAgnosticBS {
         int[] nums1 = {65,54,43,32,21,0,-1,-12,-34,-54};
         int target = 5;
         System.out.println(OAsearch(nums , target));
-        System.out.println(OAsearch(nums1 , target));
+        System.out.println(OAsearch(nums1 , -34));
     }
 
     static int OAsearch(int arr[] , int target){
