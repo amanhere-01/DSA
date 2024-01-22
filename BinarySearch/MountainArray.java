@@ -2,7 +2,7 @@
 // Q)  https://leetcode.com/problems/find-peak-element/description/
 // above both question are same
 
-
+// Basically we gotta find index of max element
 package BinarySearch;
 
 public class MountainArray {
@@ -24,7 +24,7 @@ public class MountainArray {
                 // this may be the ans, but look at left
                 // this is why end != mid - 1
                 end = mid;
-            } else {
+            } else if (arr[mid] > arr[mid-1])  {
                 // you are in asc part of array
                 start = mid + 1; // because we know that mid+1 element > mid element
             }

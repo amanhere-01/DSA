@@ -1,7 +1,7 @@
 // Q) we have to find the greatest number which is smaller than or equal to target
 //      nums = {2,3,5,9,14,16,18}
 //      target = 15
-//      so if 15 is present in the nums then return 15 if it is not then return the greatest no. which is smaller than 15 which is 16 here in this case
+//      so if 15 is present in the nums then return 15 if it is not then return the greatest no. which is smaller than 15 which is 14 here in this case
 
 package BinarySearch;
 
