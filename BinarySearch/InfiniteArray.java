@@ -1,13 +1,15 @@
 //  Q)  https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
 // infinite array means we don't know the length of array
 // this will be working for element till 90 after that it would throw indexOutOfBond exception
+// or use end= end+(end-start)*2 then we can find index of element greater than 90 but till 170
+
 
 package BinarySearch;
 
 public class InfiniteArray {
     public static void main(String[] args) {
         int[] arr = {3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170};
-        int target= 10;
+        int target= 100;
         System.out.println(search(arr,target));
     }
 
@@ -18,7 +20,7 @@ public class InfiniteArray {
 
         while (target>arr[end]){
             int newStart= end+1;
-            end= end+ (end-start+1) * 2  ;
+            end= end+ (end-start) * 2  ;
             start=newStart;
         }
         return binarySearch(arr,target,start,end);
