@@ -19,7 +19,7 @@ public class MissingNumber {
         // first we sort the element
         while (i<nums.length){
             int correct = nums[i];
-            if(nums[i]< nums.length && nums[i] != nums[correct]){
+            if(nums[i]< nums.length && nums[i] != nums[correct]){   // here we have to check for edges as length of array should be 5, but it is 4 as one number is missing
                 swap(nums,i,correct);
             }
             else {
