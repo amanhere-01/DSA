@@ -20,7 +20,7 @@ public class InfiniteArray {
 
         while (target>arr[end]){
             int newStart= end+1;
-            end= end+ (end-start) * 2  ;
+            end= end+ (end-start+1) * 2  ;
             start=newStart;
         }
         return binarySearch(arr,target,start,end);

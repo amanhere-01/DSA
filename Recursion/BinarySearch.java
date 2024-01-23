@@ -14,10 +14,10 @@ public class BinarySearch {
         int m= s + ( e - s ) / 2;
 
         if(arr[m]>target){
-            return search(arr , target , s , m-1);
+            return search(arr , target , s , m - 1);
         }
         else if (arr[m]<target){
-            return search( arr , target , m+1 , e);
+            return search( arr , target , m + 1 , e);
         }
         else {
             return m;
