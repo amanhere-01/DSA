@@ -3,7 +3,7 @@ package Patterns;
 public class Codes {
     public static void main(String[] args) {
 
-        pattern28(5);
+        pattern30(5);
     }
 
     static void pattern2(int  n){
@@ -35,7 +35,7 @@ public class Codes {
 
     static void pattern5(int  n){
         int i=1;
-        for(int row=1; row<=2*n-1 ; row++){
+        for(int row=1; row < 2*n ; row++){
             if(row<=n){
                 for(int col=1; col<= row ; col++){
                     System.out.print("* ");
@@ -62,6 +62,21 @@ public class Codes {
 
             for (int col = 0; col < totalColsInRow; col++) {
                 System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern30(int n){
+        for(int row=1; row<=n ; row++){
+            for(int space=0; space<n-row;space++){
+                System.out.print("  ");
+            }
+            for (int col=row; col>0 ; col--){
+                System.out.print(col+" ");
+            }
+            for(int col=2; col<=row; col++){
+                System.out.print(col+" ");
             }
             System.out.println();
         }
