@@ -46,7 +46,6 @@ public class MergeSort {
             mix[k++] = second[j];
             j++;
         }
-
         return mix;
     }
 }
