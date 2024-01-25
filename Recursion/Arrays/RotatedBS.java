@@ -1,6 +1,6 @@
+// Rotated Binary search
 
-
-package Recursion;
+package Recursion.Arrays;
 
 public class RotatedBS {
     public static void main(String[] args) {
