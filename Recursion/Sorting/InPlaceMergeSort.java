@@ -1,3 +1,5 @@
+//  Here we are not creating any new array we are modifying the input array
+
 package Recursion.Sorting;
 
 import java.util.Arrays;
