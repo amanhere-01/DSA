@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class InPlaceMergeSort {
     public static void main(String[] args) {
-
+        int [] nums = {5,4,3,2,1};
+        sort(nums, 0 , nums.length);
+        System.out.println(Arrays.toString(nums));
     }
 
     static void  sort(int[] arr, int s , int e){
@@ -12,38 +14,40 @@ public class InPlaceMergeSort {
             return ;
         }
 
-        int mid= arr.length/2;
-        sort(arr , 0 , mid);
-        int [] right= sort( Arrays.copyOfRange( arr , mid , arr.length ));
+        int mid= (s+e)/2;
+        sort(arr , s , mid);
+        sort( arr , mid , e );
 
-        return  merge( left , right);
+        merge( arr , s, mid , e);
     }
 
-    static int[] merge(int[] first , int[] second){
-        int[] mix = new int[first.length + second.length];
-        int i=0 , j=0 , k=0;
+    static void  merge(int[] arr , int s , int m ,  int e ){
+        int[] mix = new int[e-s];
+        int i=s , j=m , k=0;
 
-        while (i< first.length && j< second.length){
-            if(first[i] < second[j]){
-                mix[k++] = first[i];
+        while (i< m && j< e){
+            if(arr[i] < arr[j]){
+                mix[k++] = arr[i];
                 i++;
             }
             else {
-                mix[k++] = second[j];
+                mix[k++] = arr[j];
                 j++;
             }
         }
 
 
-        while (i< first.length){
-            mix[k++] = first[i];
+        while (i< m){
+            mix[k++] = arr[i];
             i++;
         }
-        while (j< second.length){
-            mix[k++] = second[j];
+        while (j< e){
+            mix[k++] = arr[j];
             j++;
         }
 
-        return mix;
+        for(int z=0 ; z< mix.length ; z++){
+            arr[s+z] = mix[z];
+        }
     }
 }
