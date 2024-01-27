@@ -23,7 +23,7 @@ public class SkipChar {
         }
     }
 
-    // without passing the new string to arguments 
+    // without passing the new string to arguments
     static String skip2(String old){
         if(old.isEmpty()){
             return "";
@@ -35,6 +35,5 @@ public class SkipChar {
 
             return ch + skip2(old.substring(1));
         }
-
     }
 }
