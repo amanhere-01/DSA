@@ -29,6 +29,7 @@ public class QuickSort {
             }
 
             if(s<=e){
+                //swap
                 int temp = arr[s];
                 arr[s]= arr[e];
                 arr[e] = temp;
