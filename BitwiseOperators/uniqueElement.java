@@ -1,3 +1,4 @@
+//  https://leetcode.com/problems/single-element-in-a-sorted-array/description/
 package BitwiseOperators;//  Q) Every number is appearing 2 times but one number is not find that unique number
 
 public class uniqueElement {
