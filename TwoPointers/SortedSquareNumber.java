@@ -14,31 +14,20 @@ public class SortedSquareNumber {
     }
 
     static int[] sort(int [] arr){
-        int n=arr.length;
-        int start=0;
-        int end= n-1;
-        int[] ans = new int[n];
-        int k=0;
+        int start = 0;
+        int end = arr.length-1;
+        int[] ans = new int[arr.length];
+        int k = arr.length-1;
 
-        while (start<=end) {
+        while (start <= end) {
             if (Math.abs(arr[start]) > Math.abs(arr[end])) {
-                ans[k++] = arr[start] * arr[start];
+                ans[k--] = arr[start] * arr[start];
                 start++;
             } else {
-                ans[k++] = arr[end] * arr[end];
+                ans[k--] = arr[end] * arr[end];
                 end--;
             }
         }
-        return rev(ans);
-    }
-
-    static int[] rev(int[] arr){
-        int end= arr.length;
-        for(int i=0; i<end/2 ; i++){
-            int temp = arr[i];
-            arr[i]= arr[end-i-1];
-            arr[end-i-1]=temp;
-        }
-        return arr;
+        return ans;
     }
 }
