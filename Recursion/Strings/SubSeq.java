@@ -26,6 +26,8 @@ public class SubSeq {
 
     }
 
+
+    //  Returning ARRAY LIST
     static ArrayList<String> subSeq(String str , String old){
         if(old.isEmpty()){
             ArrayList<String> list = new ArrayList<>();
