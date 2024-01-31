@@ -42,6 +42,8 @@ public class SubSeq {
 
 
 //  Here printing Ascii value too
+//  To print ascii value of any character we just add 0 to them for ex - ('b' +0) = 98 
+
     static ArrayList<String> subSeqAscii(String str , String old){
         if(old.isEmpty()){
             ArrayList<String> list = new ArrayList<>();
