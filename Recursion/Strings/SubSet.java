@@ -23,7 +23,7 @@ public class SubSet {
 
         // Now iterate over numbers in array
         for(int num: arr){
-            // Now find the size of outer list to iterate in the outer list till i<size
+            // For every num find the size of outer list to iterate in the outer list till i<size
             // To add the num we make an internal list which is initially copy of lists in the outer list
             // And now we add that num in the every list of outer list
             // And now the internal list is modified and add that internal list to outer list
