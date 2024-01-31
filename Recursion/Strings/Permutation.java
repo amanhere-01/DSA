@@ -17,7 +17,6 @@ public class Permutation {
             System.out.println(str);
             return;
         }
-
         char ch = old.charAt(0);
         int end= str.length();
         for(int i=0 ; i<= end; i++){
@@ -50,6 +49,7 @@ public class Permutation {
 
 
 //     Returning total number of permutation and passing count in argument
+//     We can also use list.size() from above function
 
     static int permutationCount1(String str , String old, int count){
         if(old.isEmpty()){
