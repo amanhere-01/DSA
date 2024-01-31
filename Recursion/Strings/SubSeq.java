@@ -8,6 +8,7 @@ public class SubSeq {
     public static void main(String[] args) {
         subSequence("" , "abc");
         System.out.println(subSeq( "" , "123"));
+        System.out.println(subSeqAscii("", "abc"));
     }
 
     static void subSequence(String str , String old){
@@ -35,6 +36,24 @@ public class SubSeq {
 
         ArrayList<String> left = subSeq(str + ch, old.substring(1));
         ArrayList<String > right = subSeq(str , old.substring(1));
+        left.addAll(right);
+        return left;
+    }
+
+
+//  Here printing Ascii value too
+    static ArrayList<String> subSeqAscii(String str , String old){
+        if(old.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(str);
+            return list;
+        }
+        char ch = old.charAt(0);
+
+        ArrayList<String> left = subSeqAscii(str + ch, old.substring(1));
+        ArrayList<String> mid = subSeqAscii(str + (ch +0) , old.substring(1));
+        ArrayList<String > right = subSeqAscii(str , old.substring(1));
+        left.addAll(mid);
         left.addAll(right);
         return left;
     }
