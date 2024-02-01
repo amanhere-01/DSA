@@ -1,13 +1,9 @@
 //  question may be asked you have given a 3x3 matrix and print the no of ways to go to (3,3) from (1,1). We ae counting row & col from 1
 //  And another condition is you can only go down and right in the matrix
 
-package Recursion;
+package Recursion.Maze;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class Maze {
+public class MazeRightDown {
     public static void main(String[] args) {
         System.out.println( count(1,1));
         path("" , 1,1);
