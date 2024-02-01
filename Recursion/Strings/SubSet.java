@@ -9,9 +9,8 @@ public class SubSet {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         List<List<Integer>> ans = subSet(arr);
-        for(List<Integer> l: ans){
-            System.out.println(l);
-        }
+        System.out.println(ans);
+
 
     }
 
