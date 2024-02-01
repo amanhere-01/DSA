@@ -24,7 +24,7 @@ public class ThreeDirection {
         if(c>1){                                            //  For going right
             ans.addAll(diag(str+'R' , r, c-1));
         }
-        if(r>1 && c>1){                                      // For goinf diagonally
+        if(r>1 && c>1){                                      // For going diagonally
             ans.addAll(diag(str + 'd' , r-1, c-1));
         }
         return ans;
