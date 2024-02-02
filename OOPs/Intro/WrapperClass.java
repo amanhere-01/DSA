@@ -14,13 +14,13 @@ public class WrapperClass {
         // num = 100;      // num is final ,so we can't modify it. When a primitive is final  we can ot reassign it
 
 
-        final Any any = new Any("Lame");
+        final AnyFunc any = new AnyFunc("Lame");
         any.name= "different";      // here we can modify the class instances tho the object is final
 //        any = new Any("again");              // but we can't instantiate the new object to final object
 
-        Any obj = new Any("rancho");
+        AnyFunc obj = new AnyFunc("rancho");
         for (int i = 0; i < 1000000000; i++) {  // this will print message before garbage collection
-            obj = new Any("Random name");
+            obj = new AnyFunc("Random name");
         }
 
 
@@ -35,12 +35,12 @@ public class WrapperClass {
     }
 }
 
-class Any {
+class AnyFunc {
     final int num = 10;
     String name;
 
-    public Any(String name) {
-//        System.out.println("object created");
+    public AnyFunc(String name) {
+        System.out.println("object created");
         this.name = name;
     }
 
