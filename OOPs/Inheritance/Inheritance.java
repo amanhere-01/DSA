@@ -47,7 +47,7 @@ public class Inheritance {
         d.setY(234);
         System.out.println(d.getY());
 
-        // base is reference variable and Derived() is Object created of Derived class
+        // Base is reference type,base is reference variable and Derived() is Object created of Derived class
         Base base = new Derived();  // here we can access only members of Base class only, doesn't matter if the object is created of Derived
         base.print();
 //        base.show()  ;       // Invalid command
