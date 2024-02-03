@@ -7,8 +7,8 @@ abstract class PC {
     int ram;
 
     // We can also create constructor in abstract class, but we can not create abstract constructor and abstract static method
-    public PC() {
-        ram =8;
+    public PC(int ram) {
+        this.ram=ram;
     }
 
     //we can create static and normal methods too
@@ -28,6 +28,10 @@ abstract class PC {
 }
 
 class MSI extends PC{
+
+    public MSI(int ram) {
+        super(ram);
+    }
 
     // We have to override all the methods of above abstract class
     @Override
@@ -50,8 +54,8 @@ public class AbstractClass {
     public static void main(String[] args) {
 
         //PC p  = new PC();   // We can not create object of Abstract class.PC is abstract class so this is not allowed
-        MSI m = new MSI();  // MSI is concrete class so this is allowed
-        PC p1 = new MSI();        // --> This is dynamic method dispatch
+        MSI m = new MSI(8);  // MSI is concrete class so this is allowed
+        PC p1 = new MSI(8);        // --> This is dynamic method dispatch
         m.greet();
         m.battery();
         m.poweroff();
