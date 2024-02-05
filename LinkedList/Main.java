@@ -11,10 +11,14 @@ public class Main {
         list.insertFirst(61);
         list.insertLast(11);
         list.display();
-        System.out.println();
         list.insert(100,5);
         list.display();
-        System.out.println();
+        System.out.println(list.deleteFirst() + " deleted");
+        list.display();
+        System.out.println(list.deleteLast() + " deleted");
+        list.display();
+        System.out.println(list.delete(3));
+        list.display();
         list.size();
 
     }

@@ -62,12 +62,58 @@ public class LL {
         size--;
         return val;
     }
+
+    public int deleteLast(){
+        if(size<=1){
+            return deleteFirst();
+        }
+        Node secondLast = getNode(size-2);    // basically this func will traverse to the node at index = size-2
+        int val = tail.value;
+        tail=secondLast;
+        tail.next=null;
+        size--;
+        return val;
+    }
+
+    public int delete(int index){
+        if (index==0){
+            return deleteFirst();
+        }
+        if (index==size-1){
+            return deleteLast();
+        }
+        Node prev= getNode(index-1);
+        int val = prev.next.value;
+        prev.next=prev.next.next;
+        size--;
+        return val;
+    }
+
+    public Node findNode(int val){    // finding node whose value is val
+        Node temp = head;
+        while (temp!=null){
+            if(temp.value==val){
+                return temp;
+            }
+            temp=temp.next;
+        }
+        // if there is no node of value val then return null
+        return null;
+    }
+    public Node getNode(int index){
+        Node temp= head;
+        for(int i=0; i<index; i++){
+            temp= temp.next;
+        }
+        return temp;
+    }
     public void display(){
         Node temp = head;
         while ((temp!=null)){
             System.out.print(temp.value + " ");
             temp= temp.next;
         }
+        System.out.println();
     }
 
     private class Node{
