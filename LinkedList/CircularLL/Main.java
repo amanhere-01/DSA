@@ -10,5 +10,7 @@ public class Main {
         list.insert(65);
         list.insert(77);
         list.display();
+        list.delete(43);
+        list.display();
     }
 }

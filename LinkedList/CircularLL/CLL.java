@@ -22,17 +22,6 @@ public class CLL {
         tail = node;
     }
 
-    public void display() {
-        Node node = head;
-        if (head != null) {
-            do {
-                System.out.print(node.val + " ");
-                if (node.next != null) {
-                    node = node.next;
-                }
-            } while (node != head);
-        }
-    }
 
     public void delete(int val) {
         Node node = head;
@@ -61,6 +50,19 @@ public class CLL {
             node = node.next;
         } while (node != head);
 
+    }
+
+    public void display() {
+        Node node = head;
+        if (head != null) {
+            do {
+                System.out.print(node.val + " ");
+                if (node.next != null) {
+                    node = node.next;
+                }
+            } while (node != head);
+        }
+        System.out.println();
     }
 
     private class Node {
