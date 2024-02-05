@@ -11,7 +11,10 @@ public class Main {
         list.insertFirst(61);
         list.insertLast(100);
         list.display();
-        list.reverseDisplay();
+        list.insert(41, 99);
+        list.display();
+
+//        list.reverseDisplay();
         list.size();
     }
 }

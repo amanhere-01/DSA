@@ -36,6 +36,34 @@ public class DLL {
         }
         last.next = node;
         node.prev = last;
+        size++;
+    }
+
+    public void insert(int after, int val) {        // inserting a node after a node with value=val
+        Node p = findNode(after);
+        if (p == null) {
+            System.out.println("does not exist");
+            return;
+        }
+        Node node = new Node(val);
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+        if (node.next != null) {
+            node.next.prev = node;
+        }
+        size++;
+    }
+
+    public Node findNode(int val) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == val) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
     }
 
     public void display(){
