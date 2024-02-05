@@ -37,9 +37,11 @@ public class LL {
     public void insert(int val, int index){
         if(index==0){
             insertFirst(val);
+            return;
         }
         if(index==size){
             insertLast(val);
+            return;
         }
         Node temp = head;
         for(int i=1; i<index; i++){     // temp will traverse till index-1
@@ -51,6 +53,15 @@ public class LL {
 
     }
 
+    public int deleteFirst(){
+        int val = head.value;
+        head=head.next;
+        if(head==null){     // if there is only onw node present
+            tail=null;
+        }
+        size--;
+        return val;
+    }
     public void display(){
         Node temp = head;
         while ((temp!=null)){
