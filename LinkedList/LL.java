@@ -9,7 +9,9 @@ public class LL {
     public LL() {
         this.size = 0;
     }
-
+    public void size(){
+        System.out.println(size);
+    }
     public void insertFirst(int value ){
         Node node = new Node(value);
         node.next = head;
@@ -32,7 +34,22 @@ public class LL {
         size++;
     }
 
+    public void insert(int val, int index){
+        if(index==0){
+            insertFirst(val);
+        }
+        if(index==size){
+            insertLast(val);
+        }
+        Node temp = head;
+        for(int i=1; i<index; i++){     // temp will traverse till index-1
+            temp= temp.next;
+        }
+        Node node = new Node(val,temp.next );   // now creating and setting reference for new node
+        temp.next=node;                         // setting the reference of current temp node to new node
+        size++;
 
+    }
 
     public void display(){
         Node temp = head;
