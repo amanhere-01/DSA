@@ -13,6 +13,8 @@ public class Main {
         list.display();
         list.insert(100,5);
         list.display();
+        list.insertRec(99 , 3);
+        list.display();
         System.out.println(list.deleteFirst() + " deleted");
         list.display();
         System.out.println(list.deleteLast() + " deleted");
