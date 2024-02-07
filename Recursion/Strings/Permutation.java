@@ -6,9 +6,9 @@ import java.util.List;
 public class Permutation {
     public static void main(String[] args) {
 //        permutation("" , "abc");
-//        System.out.println(permutationList("" , "abc"));
-        System.out.println(permutationCount1("", "ab", 0));
-        System.out.println(permutationCount2("", "abc"));
+        System.out.println(permutationList("" , "abc"));
+//        System.out.println(permutationCount1("", "ab", 0));
+//        System.out.println(permutationCount2("", "abc"));
 
     }
 
