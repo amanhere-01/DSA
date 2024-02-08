@@ -5,15 +5,6 @@ package LinkedList.Questions;
 
 import java.util.List;
 
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
-
 public class CycleLL {
     public static void main(String[] args) {
 
