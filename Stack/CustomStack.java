@@ -3,7 +3,7 @@ package Stack;
 import java.util.concurrent.ExecutionException;
 
 public class CustomStack {
-    private int[] data;
+    protected int[] data;
     private static final int DEFAULT_SIZE=10;
 
     private int top = -1;
@@ -35,7 +35,8 @@ public class CustomStack {
         }
         return data[top];
     }
-    private boolean isFull() {
+
+    public boolean isFull() {
         return top == data.length-1;
     }
 
