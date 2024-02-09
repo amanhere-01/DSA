@@ -2,8 +2,8 @@ package LinkedList.SinglyLL;
 
 public class LL {
 
-    protected Node head;
-    private Node tail;
+    public Node head;
+    public Node tail;
     private int size;
 
     public LL() {

@@ -24,12 +24,15 @@ public class Main {
 //        list.size();
 
         // Merge sort
-        Mergesort ms = new Mergesort();
-        LL.Node l = ms.sortList(list.head);
-        while (l!=null){
-            System.out.print(l.value + " ");
-            l=l.next;
-        }
+//        Mergesort ms = new Mergesort();
+//        LL.Node l = ms.sortList(list.head);
+//        while (l!=null){
+//            System.out.print(l.value + " ");
+//            l=l.next;
+//        }
+
+        list.reverse(list.head);
+        list.display();
 
     }
 }

@@ -5,12 +5,28 @@ package LinkedList.Questions;
 import LinkedList.SinglyLL.LL;
 
 public class Reverse {
+    //  Without recursion
     public ListNode reverseList(ListNode head) {
-        
+        if (head == null) {
+            return head;
+        }
+        ListNode prev = null;
+        ListNode present = head;
+        ListNode forw = present.next;
 
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = forw;
+            if (forw != null) {
+                forw = forw.next;
+            }
+        }
+        return prev;
     }
 
 
+    
 //  This is also recursion method
 //  Copied from SinglyLL.LL.reverse()
 
@@ -31,7 +47,7 @@ public class Reverse {
 
 
 
-//  My method
+//  My method using Recursion
 
 //    public ListNode reverseList(ListNode head) {
 //        ListNode prev = head;
