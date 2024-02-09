@@ -11,17 +11,25 @@ public class Main {
         list.insertFirst(61);
         list.insertLast(11);
         list.display();
-        list.insert(100,5);
-        list.display();
-        list.insertRec(99 , 3);
-        list.display();
-        System.out.println(list.deleteFirst() + " deleted");
-        list.display();
-        System.out.println(list.deleteLast() + " deleted");
-        list.display();
-        System.out.println(list.delete(3));
-        list.display();
-        list.size();
+//        list.insert(100,5);
+//        list.display();
+//        list.insertRec(99 , 3);
+//        list.display();
+//        System.out.println(list.deleteFirst() + " deleted");
+//        list.display();
+//        System.out.println(list.deleteLast() + " deleted");
+//        list.display();
+//        System.out.println(list.delete(3));
+//        list.display();
+//        list.size();
+
+        // Merge sort
+        Mergesort ms = new Mergesort();
+        LL.Node l = ms.sortList(list.head);
+        while (l!=null){
+            System.out.print(l.value + " ");
+            l=l.next;
+        }
 
     }
 }

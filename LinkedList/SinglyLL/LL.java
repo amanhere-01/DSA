@@ -2,7 +2,7 @@ package LinkedList.SinglyLL;
 
 public class LL {
 
-    private Node head;
+    protected Node head;
     private Node tail;
     private int size;
 
@@ -132,10 +132,11 @@ public class LL {
         System.out.println();
     }
 
-    private class Node{
-        private int value;
-        private Node next;
+    protected static class Node{
+        public int value;
+        public Node next;
 
+        public Node(){}
         public Node(int value){
             this.value = value;
         }
