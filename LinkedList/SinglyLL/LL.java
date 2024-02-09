@@ -68,6 +68,21 @@ public class LL {
         return node;
     }
 
+    // Reverse using Recursion
+    public void reverse(Node node){
+    //  Here first reaching till the tail then reversing after recursion calls get out
+        if(node==tail){
+            head=tail;
+            return;
+        }
+
+        reverse(node.next);     // When node.next= tail then above function calls and return then at that time node is previous of tail
+        tail.next= node;
+        tail=node;
+        tail.next=null;
+
+    }
+
 
     public int deleteFirst(){
         int val = head.value;
@@ -132,7 +147,7 @@ public class LL {
         System.out.println();
     }
 
-    protected static class Node{
+    public static class Node{
         public int value;
         public Node next;
 

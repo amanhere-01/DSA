@@ -2,17 +2,31 @@
 
 package LinkedList.Questions;
 
+import LinkedList.SinglyLL.LL;
+
 public class Reverse {
     public ListNode reverseList(ListNode head) {
+        
 
-        if()
     }
 
 
+//  This is also recursion method
+//  Copied from SinglyLL.LL.reverse()
 
-
-
-
+//    public void reverse(LL.Node node){
+//        //  Here first reaching till the tail then reversing after recursion calls get out
+//        if(node==tail){
+//            head=tail;
+//            return;
+//        }
+//
+//        reverse(node.next);     // When node.next= tail then above function calls and return then at that time node is previous of tail
+//        tail.next= node;
+//        tail=node;
+//        tail.next=null;
+//
+//    }
 
 
 
