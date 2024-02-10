@@ -1,7 +1,7 @@
 package Queue;
 
 public class CustomQueue {
-    protected int[] data;
+    private int[] data;
     private static final int DEFAULT_SIZE=10;
 
     private int end = 0;   // Inserting from end
@@ -12,14 +12,14 @@ public class CustomQueue {
         this.data= new int[size];
     }
 
-    public void insert(int val) throws Exception{
+    public void add(int val) throws Exception{       //O(1) Time Complexity
         if(isFull()){
             throw new Exception("Queue is full");
         }
         data[end++] = val;
     }
 
-    public int remove() throws Exception{   // removing from start
+    public int remove() throws Exception{   // removing from start and it takes O(n) time
         if(isEmpty()){
             throw new Exception("Queue is empty");
         }
@@ -44,6 +44,7 @@ public class CustomQueue {
         for (int i = 0; i < end; i++) {
             System.out.print(data[i] + " ");
         }
+        System.out.println();
     }
 
     public boolean isFull() {
