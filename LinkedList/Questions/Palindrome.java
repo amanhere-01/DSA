@@ -4,13 +4,18 @@ package LinkedList.Questions;
 
 public class Palindrome {
 //  This method is find the middle node and reverse the LL from there and compare between them
+//  Suppose a list = [1,2,3,4,5] and list2= [1,2,3,4]
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;
         }
-        ListNode mid= middleNode(head);
+        ListNode mid= middleNode(head); // here mid= 3
         ListNode secondHead= rev(mid);
-
+// NOTE:
+// Now that we have reversed the list from mid then when we print head node till null, it will be [1,2,3]. After reversing original list changes.
+// For list2 printing head till null will give [1,2,3]
+// When we print secondHead till temp , it will be [5,4,3] . For list2 it will give [4,3]
+// So the mid node will be included in both
         while(head!=null && secondHead!=null){
             if(head.val!= secondHead.val){
                 return false;
