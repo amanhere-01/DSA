@@ -31,8 +31,15 @@ public class Main {
 //            l=l.next;
 //        }
 
-        list.reverse(list.head);
-        list.display();
+        //  Copy of LinkedList
+        LL.Node l = list.copy(list.head);
+        while (l!=null){
+            System.out.print(l.value + " ");
+            l=l.next;
+        }
+
+//        list.reverse(list.head);
+//        list.display();
 
     }
 }

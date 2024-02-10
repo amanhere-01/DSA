@@ -1,5 +1,7 @@
 package LinkedList.SinglyLL;
 
+import LinkedList.Questions.ListNode;
+
 public class LL {
 
     public Node head;
@@ -138,6 +140,7 @@ public class LL {
         }
         return temp;
     }
+
     public void display(){
         Node temp = head;
         while ((temp!=null)){
@@ -145,6 +148,23 @@ public class LL {
             temp= temp.next;
         }
         System.out.println();
+    }
+
+    public Node copy(Node head){
+        Node head1= null;
+        Node temp= null;
+        while(head!=null){
+            Node node= new Node(head.value);
+            if(head1==null){
+                head1= node;
+            }
+            else{
+                temp.next=node;
+            }
+            temp= node;
+            head= head.next;
+        }
+        return head1;
     }
 
     public static class Node{
