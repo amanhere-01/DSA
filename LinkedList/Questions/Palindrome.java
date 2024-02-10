@@ -3,7 +3,39 @@
 package LinkedList.Questions;
 
 public class Palindrome {
+//  This method is find the middle node and reverse the LL from there and compare between them
     public boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        ListNode mid= middleNode(head);
+        ListNode secondHead= rev(mid);
+
+        while(head!=null && secondHead!=null){
+            if(head.val!= secondHead.val){
+                return false;
+            }
+            head=head.next;
+            secondHead= secondHead.next;
+        }
+
+        return true;
+    }
+
+    public ListNode middleNode(ListNode head) {
+        ListNode f = head;
+        ListNode s = head;
+
+        while(f!=null && f.next!=null){
+            s=s.next;
+            f=f.next.next;
+        }
+        return s;
+    }
+
+
+//  This method is first copy the given LL then reverse the given LL and now compare them
+    public boolean isPalindrome2(ListNode head) {
         if (head == null || head.next == null) {
             return true;
         }
