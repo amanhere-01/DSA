@@ -1,35 +1,37 @@
 package Queue;
 
-public class CustomQueue {
+public class CircularQueue {
     protected int[] data;
     private static final int DEFAULT_SIZE=10;
 
-    private int end = 0;   // Inserting from end
-    public CustomQueue(){
+    protected int end = 0;      // Inserting from end
+    protected int front=0;      // Deleting from front
+    protected int size=0;
+    public CircularQueue(){
         this(DEFAULT_SIZE);         // this will call constructor with size argument
     }
-    public CustomQueue(int size){
+    public CircularQueue(int size){
         this.data= new int[size];
     }
 
-    public void add(int val) throws Exception{       //O(1) Time Complexity
+    public void add(int value) throws Exception{
         if(isFull()){
             throw new Exception("Queue is full");
         }
-        data[end++] = val;
+        data[end]=value;
+        end++;
+        end= end% data.length;
+        size++;
     }
 
-    public int remove() throws Exception{   // removing from start and it takes O(n) time
+    public int remove() throws Exception{
         if(isEmpty()){
             throw new Exception("Queue is empty");
         }
-        int deleted= data[0];
-        //shifting elements
-        for (int i = 1; i < end; i++) {
-            data[i-1] = data[i];
-        }
-        end--;
-
+        int deleted = data[front];
+        front++;
+        front= front% data.length;
+        size--;
         return deleted;
     }
 
@@ -41,17 +43,14 @@ public class CustomQueue {
     }
 
     public void display(){
-        for (int i = 0; i < end; i++) {
-            System.out.print(data[i] + " ");
-        }
-        System.out.println();
+
     }
 
     public boolean isFull() {
-        return end == data.length;
+        return size == data.length;
     }
 
     private boolean isEmpty(){
-        return end == 0;
+        return size == 0;
     }
 }
