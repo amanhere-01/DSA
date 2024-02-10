@@ -19,7 +19,21 @@ public class CustomQueue {
         data[end++] = val;
     }
 
-    
+    public int remove() throws Exception{   // removing from start
+        if(isEmpty()){
+            throw new Exception("Queue is empty");
+        }
+        int deleted= data[0];
+        //shifting elements
+        for (int i = 1; i < end; i++) {
+            data[i-1] = data[i];
+        }
+        end--;
+
+        return deleted;
+    }
+
+
     public boolean isFull() {
         return end == data.length;
     }
