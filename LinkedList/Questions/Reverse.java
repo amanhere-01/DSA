@@ -7,7 +7,7 @@ import LinkedList.SinglyLL.LL;
 public class Reverse {
 
 
-    //  Iteration method
+    //  Iteration method or Inplace reverse
     public ListNode reverseList(ListNode head) {
         if (head == null) {
             return head;
