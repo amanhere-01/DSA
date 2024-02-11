@@ -13,7 +13,7 @@ public class DynamicQueue extends  CircularQueue{
     public void add(int val) throws Exception {
         if(this.isFull()){
             int[] temp = new int[data.length * 2];
-            // copy prev items in new stack
+            // copy prev items in new queue
             for (int i = 0; i < data.length; i++) {
                 temp[i] = data[ (front+i) % data.length];
             }
