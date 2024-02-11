@@ -7,9 +7,11 @@ public class CircularQueue {
     protected int end = 0;      // Inserting from end
     protected int front=0;      // Deleting from front
     protected int size=0;
+
     public CircularQueue(){
         this(DEFAULT_SIZE);         // this will call constructor with size argument
     }
+
     public CircularQueue(int size){
         this.data= new int[size];
     }
@@ -24,7 +26,7 @@ public class CircularQueue {
         size++;
     }
 
-    public int remove() throws Exception{
+    public int remove() throws Exception{       // This will take O(1) TC unlike custom queue/normal queue
         if(isEmpty()){
             throw new Exception("Queue is empty");
         }
@@ -42,8 +44,17 @@ public class CircularQueue {
         return data[0];
     }
 
-    public void display(){
-
+    public void display() throws Exception{
+        if(isEmpty()){
+            throw new Exception("Queue is empty");
+        }
+        int i=front;
+        do{
+            System.out.print(data[i]+ " ");
+            i++;
+            i=i% data.length;
+        } while (i!=end);
+        System.out.println();
     }
 
     public boolean isFull() {
