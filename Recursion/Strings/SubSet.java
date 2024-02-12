@@ -1,5 +1,3 @@
-//      This is finding the subset of array with iteration method, not with recursion
-
 package Recursion.Strings;
 
 import java.util.ArrayList;
