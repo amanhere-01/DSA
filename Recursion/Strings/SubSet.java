@@ -11,8 +11,31 @@ public class SubSet {
         List<List<Integer>> ans = subSet(arr);
         System.out.println(ans);
 
+        // With recusion
+        List<List<Integer>> ans2 = new ArrayList<>();
+        sets(ans2, new ArrayList<>() , 0, arr);
+        System.out.println(ans2);
 
     }
+    static void sets(List<List<Integer>> ans,List<Integer> inner,int i, int[] nums){
+
+        if(i== nums.length){
+            ans.add(inner);
+            return;
+        }
+        int num= nums[i];
+
+        List<Integer> innerWithNum = new ArrayList<>(inner);
+        innerWithNum.add(num);
+
+        sets(ans,innerWithNum ,i+1, nums);
+        sets(ans, inner, i+1, nums) ;
+
+    }
+
+
+
+    // With iteration
 
     static List<List<Integer>> subSet( int [] arr){
         // First create a outer list
