@@ -3,6 +3,35 @@
 package LinkedList.Questions;
 
 public class RotateList {
+
+    public ListNode rotateRightt(ListNode head, int k) {
+        if(head==null || head.next == null || k==0){
+            return head;
+        }
+        // Find number of nodes
+        int size =1;
+        ListNode last= head;
+        while(last.next!=null){
+            last=last.next;
+            size++;
+        }
+        last.next= head;
+
+        int rotations = k%size;
+        int skip= size - rotations;
+        ListNode newEnd= head;
+        for(int i=0; i< skip-1 ; i++){
+            newEnd= newEnd.next;
+        }
+
+        head= newEnd.next;
+        newEnd.next= null;
+
+        return head;
+
+    }
+
+//  Basically my approach is first reverse list then break it to 2 list from where it is asked and then reverse both parts then connect it at the end
     public ListNode rotateRight(ListNode head, int k) {
         if(head==null || head.next == null ){
             return head;
