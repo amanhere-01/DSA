@@ -12,7 +12,7 @@ public class Palindrome {
         }
 
         sen.toLowerCase();
-        for (int i=0 ; i<sen.length() ; i++){
+        for (int i=0 ; i<sen.length()/2 ; i++){
             char start = sen.charAt(i);
             char end = sen.charAt(sen.length() -1 -i);
             if(start != end){

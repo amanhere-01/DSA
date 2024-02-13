@@ -37,6 +37,12 @@ public class String_Builder {
         System.out.println(Arrays.toString(sen.split(" ")));    // it will cut where the spaces are present
         String name = "          chicony         ";
         System.out.println(name.strip());
+
+        String str= "   Now this   is     some    good thing  ";
+        String [] Str= str.trim().split("\\s+");    //It will first trim the str then split will split the words and store the substrings into string array
+        System.out.println(Arrays.toString(Str));
+        // \\s: This represents a whitespace character in regular expressions. It includes spaces, tabs, and newline characters.
+        //+: This is a quantifier in regular expressions that means "one or more occurrences of the preceding element". So \\s+ means one or more whitespace characters.
     }
 
 
