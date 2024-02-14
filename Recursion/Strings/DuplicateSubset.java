@@ -8,12 +8,36 @@ import java.util.Arrays;
 public class DuplicateSubset {
     public static void main(String[] args) {
         int[] arr = {1, 2, 2};
-        List<List<Integer>> ans = subsetDuplicate(arr);
-        for (List<Integer> list : ans) {
-            System.out.println(list);
+//        List<List<Integer>> ans = subsetDuplicate(arr);
+//        System.out.println(ans);
+
+        // calling recursion method
+        System.out.println( subsetsWithDup(arr));
+    }
+
+    // Recursion method
+    static List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        helper(res, new ArrayList<>(), 0, nums);
+        return res;
+    }
+
+    static void helper(List<List<Integer>> ans , List<Integer> inner, int pos, int[] nums) {
+//        ans.add(inner); // we can't do this
+        ans.add(new ArrayList<>(inner));
+
+        for (int i = pos; i < nums.length; i++) {
+            if (i>pos && nums[i]==nums[i-1]){
+                continue;
+            }
+            inner.add(nums[i]);
+            helper(ans, inner, i+1, nums);
+            inner.remove(inner.size()-1);
         }
     }
 
+    // Iteration method
     static List<List<Integer>> subsetDuplicate( int [] arr){
         List<List<Integer>> outer = new ArrayList<>();
         outer.add(new ArrayList<>());
