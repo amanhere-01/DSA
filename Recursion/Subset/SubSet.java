@@ -1,4 +1,4 @@
-package Recursion.Strings;
+package Recursion.Subset;
 
 import java.util.ArrayList;
 import java.util.List;
