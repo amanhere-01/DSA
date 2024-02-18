@@ -13,15 +13,15 @@ public class Reverse {
             return head;
         }
         ListNode prev = null;
-        ListNode present = head;
-        ListNode forw = present.next;
+        ListNode current = head;
+        ListNode next = current.next;
 
-        while (present != null) {
-            present.next = prev;
-            prev = present;
-            present = forw;
-            if (forw != null) {
-                forw = forw.next;
+        while (current != null) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if (next != null) {
+                next = next.next;
             }
         }
         return prev;
