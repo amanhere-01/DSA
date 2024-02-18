@@ -35,7 +35,7 @@ public class CombinationSumII {
             ds.remove(ds.size() - 1);
         }
 
-        // Leave it 
+        // Leave it
         int j = index + 1;
         while (j < arr.length && arr[j] == arr[j - 1]) {    // If duplicate then index++;
             j++;
