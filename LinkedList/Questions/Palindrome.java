@@ -12,7 +12,7 @@ public class Palindrome {
         ListNode mid= middleNode(head); // here mid= 3
         ListNode secondHead= rev(mid);
 // NOTE:
-// Now that we have reversed the list from mid then when we print head node till null, it will be [1,2,3]. After reversing original list changes.
+// Now that we have reversed the list from mid then when we print head node till null, it will be [1,2,3]. After reversing,the original list changes.
 // For list2 printing head till null will give [1,2,3]
 // When we print secondHead till temp , it will be [5,4,3] . For list2 it will give [4,3]
 // So the mid node will be included in both
