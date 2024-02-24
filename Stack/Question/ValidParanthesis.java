@@ -5,7 +5,17 @@ package Stack.Question;
 import java.util.Stack;
 
 public class ValidParanthesis {
-    public boolean isValid(String s){
+
+    public static void main(String[] args) {
+        String s1 = "()[]{}";
+        String s2 = "(]";
+        String s3 = "({[]})";
+        String s4 = "({[}])";
+        System.out.println(isValid(s3));
+        System.out.println(isValid(s4));
+    }
+
+    static boolean isValid(String s){
         Stack<Character> st = new Stack<>();
         int length= s.length();
         for(int i=0; i<length; i++){
