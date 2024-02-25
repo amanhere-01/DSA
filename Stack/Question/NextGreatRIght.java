@@ -1,5 +1,5 @@
 // Find the first greater element to the right of any number in arr. Return -1 if no greater element found
-
+//QUESTION RELATED TO THIS https://leetcode.com/problems/next-greater-element-i/description/
 package Stack.Question;
 
 import java.util.Arrays;
@@ -41,7 +41,7 @@ public class NextGreatRIght {
     }
 
 
-    // Traversing left to right
+    // Traversing left to right (Another method)
     // here starting from index 0 and firstly we push the index 0 in the stack and start traversing from arr[1]
     // now if arr[i] is greater than the arr[at index at top of stack] then we pop it and mark the ngr[index at top of stack]=arr[i] as arr[i] is greater and it removed the arr[at index at top of stack] and then push the ith index
     // and if arr[i] is not greater than simply push the ith index
