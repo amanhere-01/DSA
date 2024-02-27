@@ -5,7 +5,7 @@ package Stack.Question;
 import java.util.Stack;
 
 public class ValidParanthesis {
-
+    // If we use substring then it would take more time so use char array
     public static void main(String[] args) {
         String s1 = "()[]{}";
         String s2 = "(]";
@@ -16,6 +16,35 @@ public class ValidParanthesis {
     }
 
     static boolean isValid(String s){
+        Stack<Character> st = new Stack<>();
+        for(char ch : s.toCharArray()){
+            if(ch=='(' || ch=='{'|| ch=='[' ){
+                st.push(ch);
+            }
+            else{
+                if(ch==')'){
+                    if(st.isEmpty() || st.pop()!='('){
+                        return false;
+                    }
+                }
+                if(ch=='}'){
+                    if(st.isEmpty() || st.pop()!='{'){
+                        return false;
+                    }
+                }
+                if(ch==']'){
+                    if(st.isEmpty() || st.pop()!='['){
+                        return false;
+                    }
+                }
+            }
+        }
+        return st.isEmpty();
+    }
+
+
+
+    static boolean isValid2(String s){
         Stack<Character> st = new Stack<>();
         int length= s.length();
         for(int i=0; i<length; i++){
@@ -38,46 +67,4 @@ public class ValidParanthesis {
         return st.isEmpty();
     }
 
-
-    // public boolean isValid(String s) {
-    //     if(s.length()==1){
-    //         return false;
-    //     }
-    //     Stack<Character> st = new Stack<>();
-    //     int length= s.length();
-    //     for(int i=0; i<length; i++){
-    //         if(s.charAt(0)=='(' || s.charAt(0)=='{' || s.charAt(0)=='['){
-    //             st.push(s.charAt(0));
-    //         }
-    //         if(s.charAt(0)=='}'){
-    //             if(st.size()>0 && st.peek()=='{'){
-    //                 st.pop();
-    //             }
-    //             else{
-    //                 return false;
-    //             }
-    //         }
-    //         if(s.charAt(0)==']'){
-    //             if( st.size()>0 && st.peek()=='['){
-    //                 st.pop();
-    //             }
-    //             else{
-    //                 return false;
-    //             }
-    //         }
-    //         if(s.charAt(0)==')'){
-    //             if(st.size()>0 && st.peek()=='('){
-    //                 st.pop();
-    //             }
-    //             else{
-    //                 return false;
-    //             }
-    //         }
-
-    //         s= s.substring(1);
-    //     }
-
-
-    //     return st.isEmpty();
-    // }
 }
