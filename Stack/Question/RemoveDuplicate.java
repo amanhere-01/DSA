@@ -9,14 +9,15 @@ public class RemoveDuplicate {
 
     }
 
-    
+
     //  Using 1 stack
     public String removeDuplicates(String s, int k) {
         Stack<int[]> st = new Stack<>();
 //      In the stack we are pushing array. array[0] holds the char(as an integer) and array[1] holds the count of char
         char[] arr = s.toCharArray();
         for(int j = arr.length-1; j>=0; j--){
-            if(!st.isEmpty() && st.peek()[0] == arr[j]){    // st.peek()[0] It means at position 0 in array if character == arr[j] And In Java, when you compare a char to an int, the char is implicitly promoted to an int
+            if(!st.isEmpty() && st.peek()[0] == arr[j]){    // st.peek()[0] It means at position 0 in array if character == arr[j]
+                // And here we are comparing char to an int (st.peek()[0] == arr[j]) In Java, when you compare a char to an int, the char is implicitly promoted to an int
                 st.peek()[1]++;     // Increasing the value of count
             }else{
                 st.push(new int[]{arr[j],1});   // char will be fed in array stack as an integer
