@@ -1,4 +1,4 @@
-package Sets;
+package SetsAndMaps;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -8,7 +8,7 @@ public class AllSets {
     public static void main(String[] args) {
 
         // HashSet store element unordered
-    
+
         HashSet<Integer> h= new HashSet<>(5,0.5f);
         h.add(23);
         h.add(87);
