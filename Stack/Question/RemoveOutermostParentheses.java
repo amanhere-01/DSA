@@ -26,7 +26,7 @@ public class RemoveOutermostParentheses {
         return ans.toString();
     }
 
-    
+
     // Using Stack
     // Push the chars along with appending the string
 
