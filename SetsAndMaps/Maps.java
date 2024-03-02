@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Maps {
+    //  HashMap allows null key but only once and allows multiple null values
     public static void main(String[] args) {
         Map<Integer, String> hm = new HashMap<>();
         hm.put(19,"wigga");
@@ -13,7 +14,7 @@ public class Maps {
         hm.put(37,"nigga");
         System.out.println(hm);
         System.out.println(hm.entrySet());      // This will also print whole map
-        System.out.println(hm.get(2));
+        System.out.println(hm.get(28));
         System.out.println(hm.containsKey(3));
         System.out.println(hm.containsValue("broski"));
         hm.put(3,"broski");     // This will override the value which has key=3
@@ -46,7 +47,7 @@ public class Maps {
         LinkedHashMap<Integer, String> lhm = new LinkedHashMap<>();
         lhm.put(89,"nigga");
         lhm.put(19,"wigga");
-        lhm.put(37,"nigga");
+        lhm.put(37,"nigga");    // Values can be same but not the key
         lhm.put(28,"sigga");
         System.out.println(lhm);
 
