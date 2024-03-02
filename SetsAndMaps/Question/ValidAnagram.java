@@ -67,7 +67,19 @@ public class ValidAnagram {
     }
 
     public boolean isAnagram4(String s, String t) {
-
+        int[] arr = new int[25];
+        for(char ch : s.toCharArray()){
+            arr[ch - 'a']++;
+        }
+        for(char ch : t.toCharArray()){
+            arr[ch-'a']--;
+        }
+        for(int i: arr){
+            if(arr[i]!=0){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
