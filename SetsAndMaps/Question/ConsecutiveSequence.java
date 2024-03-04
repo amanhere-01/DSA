@@ -5,7 +5,7 @@ package SetsAndMaps.Question;
 import java.util.HashSet;
 
 public class ConsecutiveSequence {
- 
+
     public int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
         for(int n: nums){
@@ -16,8 +16,9 @@ public class ConsecutiveSequence {
         for(int num: set){
             if(!set.contains(num-1)){   // If previous number does not exist then it is the starting point
                 int length=1;
-                while(set.contains(num+1)){
-                    num++;
+                int nextNum= num +1;
+                while(set.contains(nextNum)){
+                    nextNum++;
                     length++;
                 }
                 maxLen= Math.max(maxLen, length);
