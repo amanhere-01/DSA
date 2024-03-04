@@ -20,7 +20,7 @@ public class AllSets {
         System.out.println(h.contains(6));
         System.out.println(h.size());
         System.out.println(h);
-        
+
         for(int i: h){              // Traversing
             System.out.print(i + " ");
         }
