@@ -14,7 +14,7 @@ public class ConsecutiveSequence {
 
         int maxLen=0;
         for(int num: set){
-            if(!set.contains(num-1)){   // If previous number does not exist then it is the starting point
+            if(!set.contains(num-1)){   // If previous number does not exist then it is the starting point 
                 int length=1;
                 int nextNum= num +1;
                 while(set.contains(nextNum)){
