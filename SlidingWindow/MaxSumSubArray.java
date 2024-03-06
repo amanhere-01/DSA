@@ -26,7 +26,7 @@ public class MaxSumSubArray {
         return maxSum;
     }
 
-    
+
     static long maximumSumSubarray(int K, ArrayList<Integer> Arr, int N){
         int c=0;
         long sum=0;
@@ -36,9 +36,16 @@ public class MaxSumSubArray {
             c++;
         }
         long maxSum=sum;
-        for(int i=1; i<=N-K ; i++){
-            sum= sum - Arr.get(i-1) + Arr.get(i+K-1);
+//        for(int i=1; i<=N-K ; i++){
+//            sum= sum - Arr.get(i-1) + Arr.get(i+K-1);
+//            maxSum= Math.max(maxSum,sum);
+//        }
+        // or we can do in this way too
+        int j=0;
+        for(int i=K; i< Arr.size() ; i++){
+            sum= sum - Arr.get(j) + Arr.get(i);
             maxSum= Math.max(maxSum,sum);
+            j++;
         }
         return maxSum;
     }
