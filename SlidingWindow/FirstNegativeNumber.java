@@ -2,17 +2,19 @@
 
 package SlidingWindow;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class FirstNegativeNumber {
 
     public static void main(String[] args) {
-        
+        long []A = {-8, 2, 3, -6, 10};
+        System.out.println(Arrays.toString(printFirstNegativeInteger(A, 5, 2)));
     }
 
 
-    public long[] printFirstNegativeInteger(long A[], int N, int K)
+    static long[] printFirstNegativeInteger(long A[], int N, int K)
     {
         long[] arr = new long[N-K+1];
         Queue<Long> queue = new LinkedList<>();
