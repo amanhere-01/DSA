@@ -13,7 +13,10 @@ public class TotalNoOfAnagrams {
     }
 
 
-    
+    // Here put all chars of pat in map then take the size of map in count.
+    // Traverse in txt, If the char is present in map then reduce the frequency.
+    // If the frequency is 0 then reduce count (NOTICE: the size of map will still remain same, only the frequency is changing)
+    // Now when window size is maintained then check if count==0 or not. If it is 0 then it is anagram
     static int search(String pat, String txt) {
         Map<Character, Integer> map = new HashMap<>();
 
