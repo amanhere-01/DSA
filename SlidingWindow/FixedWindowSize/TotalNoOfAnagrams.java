@@ -1,6 +1,6 @@
 //  https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1
 
-package SlidingWindow;
+package SlidingWindow.FixedWindowSize;
 
 import java.util.HashMap;
 import java.util.Map;

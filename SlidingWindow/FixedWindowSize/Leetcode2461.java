@@ -1,7 +1,7 @@
 //  Maximum Sum of Distinct Subarrays With Length K
 //  https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/
 
-package SlidingWindow;
+package SlidingWindow.FixedWindowSize;
 
 import java.util.HashMap;
 

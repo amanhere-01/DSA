@@ -1,7 +1,7 @@
 //  https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
 // question is same as TotalNoOfAnagrams in this folder
 
-package SlidingWindow;
+package SlidingWindow.FixedWindowSize;
 
 import java.util.ArrayList;
 import java.util.HashMap;

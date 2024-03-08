@@ -1,4 +1,4 @@
-package SlidingWindow;
+package SlidingWindow.VariableWindowSize;
 
 public class LargestSubarrayOfSumK {
 

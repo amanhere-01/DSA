@@ -1,4 +1,4 @@
-package SlidingWindow;
+package SlidingWindow.FixedWindowSize;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 //  https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1
 
-package SlidingWindow;
+package SlidingWindow.FixedWindowSize;
 
 import java.util.ArrayList;
 
