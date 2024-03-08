@@ -13,6 +13,7 @@ public class Leetcode438 {
         ArrayList<Integer> list = new ArrayList<>();
         HashMap<Character,Integer> map = new HashMap<>();
 
+        // adding all the chars of p into map
         for(int i=0; i<p.length(); i++){
             char ch= p.charAt(i);
             if(map.containsKey(ch)){
@@ -25,12 +26,13 @@ public class Leetcode438 {
 
         int i=0, j=0;
         int count= map.size();
-        int k= p.length();
+        int k= p.length();          // Window size
+
         while(j<s.length()){
             char ch= s.charAt(j);
             if(map.containsKey(ch)){
                 map.put(ch, map.get(ch)-1);
-                if(map.get(ch)==0){
+                if(map.get(ch)==0){         // if freq of ch is 0 then we have to decrease count
                     count--;
                 }
             }
@@ -48,7 +50,7 @@ public class Leetcode438 {
                 // Sliding the window
                 char remove= s.charAt(i);
                 if(map.containsKey(remove)){
-                    if(map.get(remove)==0){
+                    if(map.get(remove)==0){     // While moving ahead if frequency of remove is 0 then we have to increase count then we put the removing char into map again
                         count++;
                     }
                     map.put(remove, map.get(remove)+1);
