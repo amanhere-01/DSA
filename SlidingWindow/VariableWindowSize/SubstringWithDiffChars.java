@@ -26,8 +26,13 @@ public class SubstringWithDiffChars {
                 maxLen = Math.max(maxLen , j-i+1);
             }
             else{
-                i = map.get(ch) + 1;
-                map.put(ch, j);
+                int NewI= map.get(ch) +1;
+                while (i != NewI){
+                    char remove = s.charAt(i);
+                    map.remove(remove);
+                    i++;
+                }
+                map.put(ch, j);     
             }
             j++;
         }
