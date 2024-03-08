@@ -59,7 +59,7 @@ public class SubstringWithDiffChars {
 
 //    static int lengthOfLongestSubstring(String s) {
 //        HashMap<Character , Integer> map= new HashMap<>();
-//        // key= char, value= index
+            // key= char, value= index
 //        int i=0, j=0;
 //        int maxLen=0;
 //
