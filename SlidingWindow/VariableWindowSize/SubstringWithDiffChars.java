@@ -16,8 +16,9 @@ public class SubstringWithDiffChars {
     static int lengthOfLongestSubstring(String s) {
         // We will do it with same method as LongestKUniqueChars
         // Here k is not given. We will treat k as window size
+        // We will keep checking the size of map with current window size
         // Take k= j-i+1. If map.size()== j-i+1 then this is ans
-        // If map.size() < j-i+1 then it means char is repeating so we will pop until size==j-i+1 
+        // If map.size() < j-i+1 then it means char is repeating so we will pop until size==j-i+1
         HashMap<Character , Integer> map = new HashMap<>();
         int i=0,j=0;
         int max=0;
@@ -30,20 +31,14 @@ public class SubstringWithDiffChars {
                 map.put(ch, 1);
             }
 
+            // here k is variable and it is the size of current window
+            if(map.size() == j-i+1){
+                max = Math.max(max , j-i+1);
 
-            // here k is variable so
-            if(map.size() == k){
-                max = Math.max(max , j-i+1);    // j-i+1 is the window size you can say
-                j++;
             }
 
-            if(map.size() < k){
-                j++;
-            }
-
-
-            if(map.size() >k){
-                while (map.size() >k){          // remove the item until map.size()==k
+            if(map.size() < j-i+1){         // If size is less than current window size then it means the char is repeating at index j
+                while (map.size() < j-i+1){          // remove the item until map.size()==k
                     char remove = s.charAt(i);
                     if( map.get(remove) >1 ){
                         map.put(remove , map.get(remove) -1);
@@ -52,14 +47,15 @@ public class SubstringWithDiffChars {
                     }
                     i++;
                 }
-                j++;
             }
+            j++;
         }
 
         return max;
     }
-    }
 
+
+    // My approach
 
 //    static int lengthOfLongestSubstring(String s) {
 //        HashMap<Character , Integer> map= new HashMap<>();
