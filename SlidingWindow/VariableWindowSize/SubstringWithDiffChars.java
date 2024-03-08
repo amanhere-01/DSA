@@ -12,30 +12,79 @@ public class SubstringWithDiffChars {
         System.out.println(lengthOfLongestSubstring(s));
     }
 
+
     static int lengthOfLongestSubstring(String s) {
-        HashMap<Character , Integer> map= new HashMap<>();
+        // We will do it with same method as LongestKUniqueChars
+        // Here k is not given. We will treat k as window size
+        // Take k= j-i+1. If map.size()== j-i+1 then this is ans
+        // If map.size() < j-i+1 then it means char is repeating so we will pop until size==j-i+1 
+        HashMap<Character , Integer> map = new HashMap<>();
+        int i=0,j=0;
+        int max=0;
 
-        int i=0, j=0;
-        int maxLen=0;
-
-        while (j<s.length()){
+        while (j< s.length()){
             char ch = s.charAt(j);
-
-            if(!map.containsKey(ch)){
-                map.put(ch, j);
-                maxLen = Math.max(maxLen , j-i+1);
+            if(map.containsKey(ch)){
+                map.put(ch, map.get(ch) +1);
+            }else{
+                map.put(ch, 1);
             }
-            else{
-                int NewI= map.get(ch) +1;
-                while (i != NewI){
+
+
+            // here k is variable so
+            if(map.size() == k){
+                max = Math.max(max , j-i+1);    // j-i+1 is the window size you can say
+                j++;
+            }
+
+            if(map.size() < k){
+                j++;
+            }
+
+
+            if(map.size() >k){
+                while (map.size() >k){          // remove the item until map.size()==k
                     char remove = s.charAt(i);
-                    map.remove(remove);
+                    if( map.get(remove) >1 ){
+                        map.put(remove , map.get(remove) -1);
+                    }else {
+                        map.remove(remove);
+                    }
                     i++;
                 }
-                map.put(ch, j);     
+                j++;
             }
-            j++;
         }
-        return maxLen;
+
+        return max;
     }
+    }
+
+
+//    static int lengthOfLongestSubstring(String s) {
+//        HashMap<Character , Integer> map= new HashMap<>();
+//        // key= char, value= index
+//        int i=0, j=0;
+//        int maxLen=0;
+//
+//        while (j<s.length()){
+//            char ch = s.charAt(j);
+//
+//            if(!map.containsKey(ch)){
+//                map.put(ch, j);
+//                maxLen = Math.max(maxLen , j-i+1);
+//            }
+//            else{
+//                int NewI= map.get(ch) +1;
+//                while (i != NewI){
+//                    char remove = s.charAt(i);
+//                    map.remove(remove);
+//                    i++;
+//                }
+//                map.put(ch, j);
+//            }
+//            j++;
+//        }
+//        return maxLen;
+//    }
 }

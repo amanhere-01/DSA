@@ -34,7 +34,7 @@ public class LongestKUniqueChars {
             }
 
             if(map.size() >k){
-                while (map.size() >k){
+                while (map.size() >k){          // remove the item until map.size()==k
                     char remove = s.charAt(i);
                     if( map.get(remove) >1 ){
                         map.put(remove , map.get(remove) -1);
