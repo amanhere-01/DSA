@@ -1,43 +1,40 @@
+//  https://leetcode.com/problems/sliding-window-maximum/description/
+//  Return the max element in k window size
+
 package SlidingWindow.FixedWindowSize;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SlidingWindowMaximum {
     public static void main(String[] args) {
         int[] arr = {1, 3, -1, -3, 5, 3, 6, 7};
-        System.out.println(slidingMaximum(arr , 3));
+        System.out.println(Arrays.toString(maxSlidingWindow(arr, 3)));
     }
 
-    static List<Integer> slidingMaximum(final int[] arr, int k) {
-        ArrayDeque<Integer> maxList= new ArrayDeque<>();
-        ArrayList<Integer> ans =new ArrayList<>();
-        int i=0, j=0;
+    static int[] maxSlidingWindow(int[] nums, int k) {
+        int [] ans = new int[nums.length-k+1];
+        Deque<Integer> list = new ArrayDeque<>();
+        int i=0, v=0;
 
-        while(j< arr.length){
-            if(maxList.size()>0){
-                while (!maxList.isEmpty() && arr[j]> maxList.peekLast()){
-                    maxList.removeLast();
+        for(int j=0; j< nums.length; j++){
+            if (list.size()>0 ){
+                while(list.size()>0 && nums[j]>list.peekLast()){
+                    list.removeLast();
                 }
-                maxList.addLast(arr[j]);
+                list.add(nums[j]);
             }else {
-                maxList.add(arr[j]);
+                list.add(nums[j]);
             }
 
-            if(k > j-i+1){
-                j++;
-            }
 
-            else if ( k== j-i+1){
-                ans.add(maxList.peekFirst());
+            if( j-i+1 ==k){                 // j-i+1 is the window size
+                ans[v++] = list.peekFirst();
 
-                // sliding the window
-                if (!maxList.isEmpty() && arr[i] == maxList.peekFirst()){
-                    maxList.removeFirst();
+                // Now slide the window
+                if (list.size()>0 &&  nums[i] == list.peekFirst()){
+                    list.removeFirst();
                 }
                 i++;
-                j++;
             }
         }
         return ans;
