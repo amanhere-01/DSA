@@ -17,8 +17,9 @@ public class SlidingWindowMaximum {
         int i=0, v=0;
 
         for(int j=0; j< nums.length; j++){
+            // Make a queue and add the max elements into that list. (Kind of next greater right element)
             if (list.size()>0 ){
-                while(list.size()>0 && nums[j]>list.peekLast()){
+                while(list.size()>0 && nums[j]>list.peekLast()){        // Pop the last element from list until it is greater than nums[j]
                     list.removeLast();
                 }
                 list.add(nums[j]);
