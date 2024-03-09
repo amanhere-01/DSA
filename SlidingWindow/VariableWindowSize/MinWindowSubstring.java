@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class MinWindowSubstring {
     public static void main(String[] args) {
-//        String s = "ADOBECODEBANC";
-//        String t= "ABC";
-        String s = "timetopractice";
-        String t= "toc";
+        String s = "ADOBECODEBANC";
+        String t= "ABC";
+//        String s = "timetopractice";
+//        String t= "toc";
         System.out.println(minWindow(s,t));
     }
 
@@ -32,29 +32,21 @@ public class MinWindowSubstring {
                 }
             }
 
-            if(count>0){
-                j++;
-            }
-
-            if(count==0){
-
-                while (count == 0){
-                    if (j-i+1 < minLength){
-                        minLength= j-i+1;
-                        startIndex=i;
-                    }
-
-                    char remove = s.charAt(i);
-                    if (map.containsKey(remove)){
-                        if (map.get(remove) == 0){
-                            count++;
-                        }
-                        map.put(remove , map.get(remove) +1);
-                    }
-                    i++;
+            while (count == 0){
+                if (j-i+1 <= minLength){
+                    minLength= j-i+1;
+                    startIndex=i;
                 }
-                j++;
+                char remove = s.charAt(i);
+                if (map.containsKey(remove)){
+                    if (map.get(remove) == 0){
+                        count++;
+                    }
+                    map.put(remove , map.get(remove) +1);
+                }
+                i++;
             }
+            j++;
         }
         return s.substring(startIndex, startIndex+minLength) ;
     }
