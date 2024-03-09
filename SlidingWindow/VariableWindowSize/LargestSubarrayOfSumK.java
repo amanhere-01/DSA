@@ -1,3 +1,6 @@
+//  find the length of the longest Sub-Array with sum of the elements equal to the given value K.
+//  This is for only positive numbers in the array
+
 package SlidingWindow.VariableWindowSize;
 
 public class LargestSubarrayOfSumK {
@@ -25,7 +28,7 @@ public class LargestSubarrayOfSumK {
                 j++;
             }
 
-            else {                              // if sum>k
+            else if(sum > k){
                 while (sum> k){
                     sum -= arr[i];
                     i++;
