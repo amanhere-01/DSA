@@ -1,3 +1,6 @@
+//  https://leetcode.com/problems/minimum-window-substring/description/
+//  return the minimum window substring of s such that every character in t (including duplicates) is included in the window.
+
 package SlidingWindow.VariableWindowSize;
 
 import java.util.HashMap;
