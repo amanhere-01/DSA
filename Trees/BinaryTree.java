@@ -26,7 +26,7 @@ public class BinaryTree {
         populate(sc , root);
     }
 
-    public void populate(Scanner sc, Node node){
+    private void populate(Scanner sc, Node node){
         System.out.println("Do you want to add left of " + node.value);
         boolean left = sc.nextBoolean();
         if(left){
@@ -46,5 +46,17 @@ public class BinaryTree {
         }
     }
 
-    //
+    //  Displaying
+    public void display(){
+        display(this.root, "");
+    }
+
+    private void display(Node node, String indent){
+        if(node == null){
+            return;
+        }
+        System.out.println(indent + node.value);
+        display(node.left, indent + "\t");
+        display(node.right, indent + "\t");
+    }
 }
