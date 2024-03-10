@@ -33,10 +33,33 @@ public class BinarySearchTree {
         return root==null;
     }
 
-    public void insert(int value){
+
+    // Inserting non sorted array
+    public void populate(int [] nums){
+        for(int num: nums){
+            insert(num);
+        }
+    }
+
+    // Inserting sorted array
+    public void populateSort(int[] nums){
+        populateSort(nums, 0, nums.length);
+    }
+    private void populateSort(int[] nums, int start, int end){
+        if(start >= end){
+            return;
+        }
+        int mid = (start + end)/2;
+        // Inserting the left part
+        populateSort(nums, 0, mid);
+        // Inserting the right part
+        populateSort(nums, mid+1, end);
+    }
+
+    private void insert(int value){
         root = insert(value, root);
     }
-    public Node insert(int value , Node node){
+    private Node insert(int value , Node node){
         if(node==null){
             node = new Node(value);
             return node;
@@ -55,6 +78,19 @@ public class BinarySearchTree {
         return node;
     }
 
+    public boolean balanced(){
+        return balanced(root);
+    }
+
+    private boolean balanced(Node node){
+        if (node == null) {
+            return true;
+        }
+
+        return Math.abs(height(node.left) - height(node.right)) <=1 && balanced(node.left) && balanced(node.right);
+    }
+
+    // Display
     public void display(){
         display(root, "Root Node: ");
     }
