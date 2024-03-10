@@ -10,8 +10,10 @@ public class Main {
 //        tree.prettyDisplay();
 
 
-        BinarySearchTree bst = new BinarySearchTree();
-        bst.populate( new int[]{ 2,7,1,4,8,5,10});
-        bst.display();
+//        BinarySearchTree bst = new BinarySearchTree();
+//        bst.populate( new int[]{ 2,7,1,4,8,5,10});
+//        bst.display();
+
+        
     }
 }
