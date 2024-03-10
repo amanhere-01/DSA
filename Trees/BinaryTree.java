@@ -74,7 +74,7 @@ public class BinaryTree {
             for (int i = 0; i < level - 1; i++) {
                 System.out.print("|\t\t");
             }
-            System.out.println("----->" + node.value);
+            System.out.println("|----->" + node.value);
         }
         else{
             System.out.println(node.value);
