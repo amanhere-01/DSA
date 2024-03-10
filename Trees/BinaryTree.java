@@ -82,4 +82,12 @@ public class BinaryTree {
 
         prettyDisplay(node.left, level+1);
     }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BinaryTree tree = new BinaryTree();
+        tree.populate(sc);
+        tree.prettyDisplay();
+    }
 }
