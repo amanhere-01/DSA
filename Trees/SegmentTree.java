@@ -88,4 +88,38 @@ public class SegmentTree {
 
         return node.data;
     }
+
+    // Display
+    public void display() {
+        display(this.root);
+    }
+    private void display(Node node) {
+        String str = "";
+
+        if(node.left != null) {
+            str = str + "Interval=[" + node.left.startIndex + "-" + node.left.endIndex + "] and data: " + node.left.data + " => ";
+        } else {
+            str = str + "No left child";
+        }
+
+        // for current node
+        str = str + "Interval=[" + node.startIndex + "-" + node.endIndex + "] and data: " + node.data + " <= ";
+
+        if(node.right != null) {
+            str = str + "Interval=[" + node.right.startIndex + "-" + node.right.endIndex + "] and data: " + node.right.data;
+        } else {
+            str = str + "No right child";
+        }
+
+        System.out.println(str + '\n');
+
+        // call recursion
+        if(node.left != null) {
+            display(node.left);
+        }
+
+        if(node.right != null) {
+            display(node.right);
+        }
+    }
 }
