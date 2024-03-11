@@ -45,8 +45,8 @@ public class SegmentTree {
         return node;
     }
 
-    // query
-    public int query( int qsi,int qei){     //qsi= query Start Index
+    // query ( we might be given that find sum of arr range b/w qsi- qei)   qsi= query Start Index
+    public int query( int qsi,int qei){
         return query(this.root , qsi, qei);
     }
 
@@ -65,4 +65,27 @@ public class SegmentTree {
         }
     }
 
+
+    // Update
+    public void update(int index, int value){
+        this.root.data = update(this.root, index, value);
+    }
+
+    private int update(Node node, int index, int value){
+        if (index >= node.startIndex && index <= node.endIndex){
+            if(index == node.startIndex && index == node.endIndex){
+                node.data = value;
+                return node.data;
+            }
+            else {
+                int leftAns = update(node.left, index, value);
+                int rightAns = update(node.right, index, value);
+                node.data = leftAns + rightAns;
+                return node.data;
+            }
+
+        }
+
+        return node.data;
+    }
 }
