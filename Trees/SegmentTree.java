@@ -20,6 +20,7 @@ public class SegmentTree {
     }
 
     Node root;
+
     public SegmentTree (int[] arr){
         this.root = constructTree(arr, 0, arr.length-1);
     }
@@ -42,6 +43,26 @@ public class SegmentTree {
         node.data = node.left.data + node.right.data;
 
         return node;
+    }
+
+    // query
+    public int query( int qsi,int qei){     //qsi= query Start Index
+        return query(this.root , qsi, qei);
+    }
+
+    private int query(Node node, int qsi , int qei){
+        if(node.startIndex>= qsi && node.endIndex <= qei){
+            // node range is completely lying inside query range
+            return node.data;
+        }
+        else if( node.startIndex > qei || node.endIndex < qsi){
+            // query range is outside of interval
+            return 0;
+        }
+        else {
+            // query range lying half in node range
+            return query(node.left, qsi, qei) + query(node.right, qsi, qei);
+        }
     }
 
 }
