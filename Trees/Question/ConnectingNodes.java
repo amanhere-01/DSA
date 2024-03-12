@@ -3,6 +3,8 @@
 package Trees.Question;
 
 public class ConnectingNodes {
+
+    // This method is without using extra space
     public Node connect(Node root) {
         if(root==null){
             return root;
