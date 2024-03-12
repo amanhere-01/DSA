@@ -18,11 +18,14 @@ public class BigINtegers {
 
         System.out.println(X.add(Y));
         System.out.println(X.multiply(Y));
+        System.out.println(Y.divide(X));
+        System.out.println(X.remainder(Y));
+
 
 
 //        int c = Y.intValue();       // Converting Big Integer to int
 //        System.out.println(c);
 
-        
+
     }
 }
