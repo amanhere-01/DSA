@@ -1,3 +1,5 @@
+// Whenever we are asked to do operation in Range we use segment trees  
+
 package Trees;
 
 public class SegmentTree {
