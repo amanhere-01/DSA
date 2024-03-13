@@ -9,6 +9,21 @@ public class InvertBinaryTree {
             return null;
         }
 
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+
+        root.left = right;
+        root.right = left;
+
+        return root;
+    }
+
+//  2nd approach
+    public TreeNode invertTree2(TreeNode root) {
+        if(root == null){
+            return null;
+        }
+
         invertTree(root.left);
         invertTree(root.right);
 
@@ -19,19 +34,4 @@ public class InvertBinaryTree {
         return root;
     }
 
-    // Both are same it's just that in this we create separate method for swapping
-    public TreeNode invertTree2(TreeNode root) {
-        swap(root);
-        return root;
-    }
-    private void swap(TreeNode node){
-        if(node == null){
-            return;
-        }
-        swap(node.left);
-        swap(node.right);
-        TreeNode temp = node.left;
-        node.left = node.right;
-        node.right = temp;
-    }
 }
