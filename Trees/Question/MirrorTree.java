@@ -23,7 +23,7 @@ public class MirrorTree {
     }
 
 
-    // Iterative SOlution
+    // Iterative Solution
     public boolean isSymmetric2(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root.left);
