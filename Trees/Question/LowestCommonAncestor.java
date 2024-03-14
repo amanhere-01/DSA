@@ -23,5 +23,8 @@ public class LowestCommonAncestor {
         else{                   // For the else part right have been found and left is node so return right
             return right;
         }
+
+        // or we could write instead of upper if else block with condition right == null
+        return right == null ? left : right;
     }
 }
