@@ -84,8 +84,8 @@ public class BinaryTree {
     }
 
     // Traversal
+    //  Preorder is N->L->R
     public void preOrder(){
-        //  Preorder is N->L->R
         preOrder(root);
     }
     private void preOrder(Node node){
@@ -96,9 +96,9 @@ public class BinaryTree {
         preOrder(node.left);
         preOrder(node.right);
     }
-
+    
+    //  Inorder is L->N->R
     public void inOrder(){
-        //  Preorder is L->N->R
         inOrder(root);
     }
     private void inOrder(Node node){
@@ -110,8 +110,8 @@ public class BinaryTree {
         inOrder(node.right);
     }
 
+    //  Postorder is L->R->N
     public void postOrder(){
-        //  Preorder is L->R->N
         postOrder(root);
     }
     private void postOrder(Node node){

@@ -28,8 +28,6 @@ public class BFS {
             }
             ans.add(list);
         }
-
-//        Collections.reverse(ans);   // to reverse this list we gotta wrote this command
         return ans;
     }
 }

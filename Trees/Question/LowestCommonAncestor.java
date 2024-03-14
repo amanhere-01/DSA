@@ -25,6 +25,6 @@ public class LowestCommonAncestor {
         }
 
         // or we could write instead of upper if else block with condition right == null
-        return right == null ? left : right;
+//        return right == null ? left : right;
     }
 }
