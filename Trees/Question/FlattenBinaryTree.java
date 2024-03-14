@@ -4,7 +4,24 @@ package Trees.Question;
 
 public class FlattenBinaryTree {
 
+//  First we are check if left part of tree is null or not. If not null then traverse to the right end of the left subtree of currentNode and assign the right subtree of curentNode to that end
+//  and then assign left subtree to the right part
+    public void flatten(TreeNode root) {
+        TreeNode current = root;
 
+        while(current !=null){
+            if(current.left!=null){
+                TreeNode temp = current.left;
+                while(temp.right !=null){
+                    temp=temp.right;
+                }
+                temp.right= current.right;
+                current.right = current.left;
+                current.left=null;
+            }
+            current=current.right;
+        }
+    }
 
 
 //  In this i am traversing to the bottom and then arranging it in Node->Left->Right
