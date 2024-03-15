@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class TraversalDFS {
 
-    //  --> Using stack
+//  Iteration Method
+public class TraversalDFS {
     //  Preorder is N->L->R
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -20,7 +20,7 @@ public class TraversalDFS {
             root = stack.pop();
             list.add(root.val);
 
-            if(root.right!=null){
+            if(root.right!=null){       // we have to add first right node
                 stack.push(root.right);
             }
             if(root.left!=null){
@@ -29,6 +29,7 @@ public class TraversalDFS {
         }
         return list;
     }
+
 
     //  Inorder is L->N->R
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -52,4 +53,33 @@ public class TraversalDFS {
         }
         return list;
     }
+
+    //  Postorder is L->R->N
+    //  Using 2 stack
+    public List<Integer> postorderTraversal(TreeNode root) {
+        Stack<TreeNode> st1 = new Stack<>();
+        Stack<TreeNode> st2 = new Stack<>();
+        List<Integer> list = new ArrayList<>();
+        if(root == null){
+            return list;
+        }
+
+        st1.push(root);
+        while (!st1.isEmpty()){
+            root = st1.pop();
+            st2.push(root);
+            if(root.left != null){
+                st1.push(root.left);
+            }
+            if(root.right != null){
+                st1.push(root.right);
+            }
+        }
+
+        while (!st2.isEmpty()){
+            list.add(st2.pop().val);
+        }
+        return list;
+    }
+
 }
