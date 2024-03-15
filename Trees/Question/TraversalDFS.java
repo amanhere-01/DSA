@@ -1,5 +1,7 @@
 package Trees.Question;
 
+import kotlin.Pair;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -82,4 +84,48 @@ public class TraversalDFS {
         return list;
     }
 
+
+    // Traversal of all in one go
+    public void preInPostTraversal(TreeNode root){
+        Stack<Pair<TreeNode , Integer>> st = new Stack<>();
+        st.push(new Pair<>(root,1));
+        List<Integer> pre = new ArrayList<>();
+        List<Integer> in = new ArrayList<>();
+        List<Integer> post = new ArrayList<>();
+
+        if (root == null){
+            return;
+        }
+
+        while (!st.isEmpty()){
+            Pair<TreeNode, Integer> pair = st.pop();
+            TreeNode node = pair.getFirst();
+            Integer state = pair.getSecond();
+
+            // This part is of PreOrder. Increment 1 to 2. Push the left of tree
+            if (state == 1){
+                pre.add(node.val);
+                st.push(new Pair<>(node, 2));
+                if(node.left != null){
+                    st.push(new Pair<>(node.left, 1));
+                }
+            }
+
+
+            // This part is of InOrder. Increment 2 to 3. Push the right of tree
+            else if(state == 2){
+                in.add(node.val);
+                st.push(new Pair<>(node, 3));
+                if(node.right!=null){
+                    st.push(new Pair<>(node.right, 1));
+                }
+            }
+
+            // This part is of PostOrder. Don't push anything
+            else {
+                post.add(node.val);
+            }
+        }
+        
+    }
 }
