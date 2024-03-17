@@ -2,8 +2,19 @@
 
 package POTD;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 public class InsertInterval {
-    public int[][] insert(int[][] intervals, int[] newInterval) {
+    public static void main(String[] args) {
+//        int[][] intervals = {{1,3},{6,9}};
+//        int[] newInter = {2,5};
+        int[][] intervals = {{1,2},{3,5},{6,7},{8,10},{12,16}};
+        int[] newInter = {4,8};
+        System.out.println(Arrays.deepToString(insert(intervals, newInter)));
+    }
+
+
+    static int[][] insert(int[][] intervals, int[] newInterval) {
         ArrayList<int[]> list = new ArrayList<>();
         for(int[] in: intervals){
             if(in[1] < newInterval[0]){
