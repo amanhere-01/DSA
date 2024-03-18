@@ -26,7 +26,9 @@ public class MaximumWidth {
             int first=0, last=0;
             for (int i=0; i<size; i++){
                 assert queue.peek() != null;
-                int newId = queue.peek().num - minIndex;    // to overcome overflow we are subtracting the previously assigned index with min Index of that level
+                int newId = queue.peek().num - minIndex;
+                //If we do not do this then on multiply with 2 the value would overflow so,we are subtracting the previously assigned index with min Index of that level
+                // Instead of this we could also directly use long or unsigned int
                 TreeNode node = queue.poll().node;
 
                 if(i==0)  first= newId;
