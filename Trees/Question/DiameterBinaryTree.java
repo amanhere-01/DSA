@@ -6,17 +6,17 @@ public class DiameterBinaryTree {
 
     public int diameterOfBinaryTree(TreeNode root) {
         height(root);
-        return diameter  ;
+        return diameter;
     }
 
     private int height(TreeNode node){
         if(node == null){
-            return -1;  
+            return 0;
         }
         int leftHeight = height(node.left);
         int rightHeight = height(node.right);
 
-        int dia = leftHeight + rightHeight + 2;     // we are adding 2 because the laft and right node connect to parent node with 2 edges
+        int dia = leftHeight + rightHeight ;
         diameter= Math.max(diameter,dia);
 
         return Math.max(leftHeight, rightHeight) + 1;
