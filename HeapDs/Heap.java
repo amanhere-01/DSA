@@ -16,7 +16,27 @@ public class Heap <T extends Comparable<T> > {
     }
 
     public int parent(int index){
-        return (index-1)/2;
+        return (index-1)/2;     // Since we are marking root from 0
     }
+    public int left(int index){
+        return 2*index + 1;
+    }
+    public int right(int index){
+        return 2*index + 2;
+    }
+
+    public void insert(T value){
+        list.add(value);
+        upheap(list.size() -1 );
+    }
+
+    private void upheap(int index) {
+        if(index==0){
+            return;
+        }
+        int parentIndex = parent(index);
+        if(l)
+    }
+
 
 }
