@@ -2,6 +2,7 @@ package HeapDs;
 
 import java.util.ArrayList;
 
+// This is min heap
 public class Heap <T extends Comparable<T> > {
     private ArrayList<T> list;
 
@@ -25,6 +26,8 @@ public class Heap <T extends Comparable<T> > {
         return 2*index + 2;
     }
 
+
+    // Insertion takes logN time 
     public void insert(T value){
         list.add(value);
         upheap(list.size() -1 );
