@@ -70,7 +70,15 @@ public class Heap <T extends Comparable<T> > {
             swap(min, index);
             downheap(min);
         }
+    }
 
+    // Every item remove takes logN time and total item will remove in NlogN
+    public ArrayList<T> heapSort() throws Exception{
+        ArrayList<T> data = new ArrayList<>();
+        while (!list.isEmpty()){
+            data.add(this.remove());
+        }
+        return data;
     }
 
 
