@@ -1,7 +1,7 @@
 package LinkedList.Questions;
 
 public class ListNode {
-    int val;
+    public int val;
     public ListNode next;
 
     ListNode() {}
