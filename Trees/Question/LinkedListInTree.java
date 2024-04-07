@@ -9,7 +9,7 @@ public class LinkedListInTree {
 
     public boolean isSubPath(ListNode head, TreeNode root) {
         if (root == null) return false;
-        return dfs(root, head) || isSubPath(head, root.left) || isSubPath(head, root.right);  // check for main root node if it is false then treat left node as root and do traverse 
+        return dfs(root, head) || isSubPath(head, root.left) || isSubPath(head, root.right);  // check for main root node if it is false then treat left node as root and do traverse
     }
 
     private boolean dfs(TreeNode node, ListNode head) {
