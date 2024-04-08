@@ -1,3 +1,5 @@
+// This is searching a particular string in long string basically it is hashing
+
 package Others;
 
 public class KarpRabin {
