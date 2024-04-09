@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // This is min heap
 public class Heap <T extends Comparable<T> > {
-    private ArrayList<T> list;
+    private final ArrayList<T> list;
 
     public Heap(){
         list = new ArrayList<>();
