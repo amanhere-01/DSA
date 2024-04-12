@@ -13,7 +13,7 @@ public class InsertNodeInBST {
         set(root,root,val);
         return root;
     }
-    
+
     private void set(TreeNode parent, TreeNode node, int val){
         if(node == null){
             TreeNode temp = new TreeNode(val);
