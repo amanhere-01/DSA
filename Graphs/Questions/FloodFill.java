@@ -6,6 +6,33 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class FloodFill {
+
+    //////////////  USING DFS   //////////////////          LOW T.C
+    public int[][] floodFill1(int[][] image, int sr, int sc, int color) {
+        int initialCol = image[sr][sc];
+        if(initialCol != color){
+            int[] delRow = {-1,+1,0,0};     // Since we have to travel in 4 direction then combination is like {Top,bottom,left,right} same with delCol
+            int[] delCol= {0,0,-1,+1};
+            dfs(sr,sc, color, initialCol,image, delRow, delCol);
+        }
+        return image;
+    }
+
+    private void dfs(int sr, int sc, int color, int initialCol, int[][] image, int[] delRow, int[] delCol) {
+        image[sr][sc] = color;
+        int m = image.length;
+        int n = image[0].length;
+
+        for (int i = 0; i < 4; i++) {       // checking for 4 direction
+            int nRow = sr + delRow[i];
+            int nCol = sc + delCol[i];
+            if (nRow >= 0 && nRow < m && nCol >= 0 && nCol < n && image[nRow][nCol] == initialCol) {
+                dfs(nRow, nCol, color, initialCol, image, delRow, delCol);
+            }
+        }
+    }
+
+    //////////////  USING BFS   ///////////////////
     static class Pair{
         int row;
         int column;
