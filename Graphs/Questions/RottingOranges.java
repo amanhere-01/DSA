@@ -24,10 +24,10 @@ public class RottingOranges {
 
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                if(grid[i][j]==2){
+                if(grid[i][j]==2){                  //  First put all the pair of row and column which has value 2
                     q.offer(new Pair(i,j,0));
                 }
-                if(grid[i][j]==1){
+                if(grid[i][j]==1){          // It will count the total no of good oranges
                     ctFresh++;
                 }
             }
@@ -47,7 +47,7 @@ public class RottingOranges {
                 int nrow= row + delRow[i];
                 int ncol= col + delCol[i];
                 if(nrow>=0&&nrow<m && ncol>=0&&ncol<n && grid[nrow][ncol]==1){
-                    ctFresh--;
+                    ctFresh--;      // decrease the no of fresh oranges before making it rotten
                     q.offer(new Pair(nrow,ncol,t+1));
                     grid[nrow][ncol]=2;
                 }
