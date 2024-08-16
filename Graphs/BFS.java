@@ -13,7 +13,7 @@ public class BFS {
         adj.add(new ArrayList<>(List.of(4)));
         adj.add(new ArrayList<>());
         adj.add(new ArrayList<>());
-        System.out.println(bfsOfGraph(5,adj));
+        System.out.println(bfsOfGraph(5,adj));  
     }
 
     public static ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {

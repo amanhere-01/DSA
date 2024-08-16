@@ -3,7 +3,7 @@ package Graphs.Questions;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class NoOfIsland {
+public class NoOfIslandUsingBfs {
     static class Pair{
         int row;
         int column;
