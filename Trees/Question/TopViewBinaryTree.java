@@ -4,17 +4,18 @@ package Trees.Question;
 
 import java.util.*;
 
-class Pair{
-    TreeNode node;
-    int col;
-    Pair(TreeNode node, int col){
-        this.node= node;
-        this.col=col;
-    }
-}
+
 
 public class TopViewBinaryTree {
-    static ArrayList<Integer> topView(TreeNode root) {
+    class Pair{
+        TreeNode node;
+        int col;
+        Pair(TreeNode node, int col){
+            this.node= node;
+            this.col=col;
+        }
+    }
+    ArrayList<Integer> topView(TreeNode root) {
         TreeMap<Integer,Integer> map= new TreeMap();
         Queue<Pair> q = new LinkedList<>();
         

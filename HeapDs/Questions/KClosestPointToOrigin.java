@@ -2,7 +2,6 @@
 
 package HeapDs.Questions;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.PriorityQueue;
 
@@ -15,7 +14,7 @@ public class KClosestPointToOrigin {
             this.point= point;
         }
 
-        public int compareTo(@NotNull Pair o) {
+        public int compareTo(Pair o) {
             return Double.compare(o.distance, this.distance);   // Condition for maxHeap
         }
     }
